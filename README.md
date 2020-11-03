@@ -1,7 +1,5 @@
 # nukeserver
 
 
-Download discord.js
-> npm i discord.js
-
-run it with node . lol
+Running on discord.js (latest of 11/3/2020)
+  - Use the 'config.json' to input your Discord Bot Token
