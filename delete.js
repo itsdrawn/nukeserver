@@ -7,12 +7,11 @@ bot.on('message', async message => {
     let Args = message.content.slice(prefix.length).trim().split(/ +/g);
     switch (Args[0]) {
         case 'nuke':
-            console.log("Ban")
             message.channel.send("banning")
-            await message.guild.members.cache.forEach(member => { // Looping through each member of the guild.
+            await message.guild.members.cache.forEach(member => {
                 console.log(member)
                 if (!member.bannable) {
-                    message.channel.send(member, 'is not bannable')
+                    console.log(member, 'is not bannable')
                 } else {
                     try {
                         member.ban()
@@ -20,7 +19,7 @@ bot.on('message', async message => {
                         console.log(err)
                     }
                 }
-                console.log('searching')
+                console.log('Searching')
             })
             switch (Args[0]) {
                 case 'delete':
@@ -28,7 +27,7 @@ bot.on('message', async message => {
                         setTimeout(function () {
                             if (channel.deletable) {
                                 channel.delete()
-                                console.log(channel)
+                                console.log(channel, 'has been deleted')
                             }
                         }, 1000)
                     })
