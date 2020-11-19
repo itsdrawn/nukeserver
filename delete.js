@@ -3,14 +3,14 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 const prefix = "smart!"
 const SendMessage = false
-const MOYC == "stuff" // message of ur choice lol
+const MOYC = "stuff" // message of ur choice lol
 
 bot.on('message', async message => {
     let Args = message.content.slice(prefix.length).trim().split(/ +/g);
     switch (Args[0]) {
         case 'nuke':
             if(SendMessage == true) {
-             message.channel.send(`${MOYC}`)   
+             message.channel.send(MOYC)   
             }
             await message.guild.members.cache.forEach(member => {
                 console.log(member)
